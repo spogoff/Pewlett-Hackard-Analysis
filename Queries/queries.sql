@@ -242,3 +242,83 @@ AND (tl.to_date = '9999-01-01');
 
 SELECT * 
 FROM retirement_titles;
+
+
+-- Partition the data to show only most recent title per employee
+
+SELECT emp_no, 
+	   first_name, 
+	   last_name,
+	   title,
+	   from_date,
+	   to_date,
+	   salary
+INTO retirement_titles_partitioned
+FROM
+ (SELECT emp_no, 
+	     first_name, 
+	     last_name,
+	     title,
+	     from_date,
+         to_date,
+	     salary, ROW_NUMBER() OVER
+ (PARTITION BY (emp_no)
+ ORDER BY to_date DESC) rn
+ FROM retirement_titles
+ ) tmp WHERE rn = 1
+ORDER BY emp_no;
+
+--  check the table 
+
+SELECT * 
+FROM retirement_titles_partitioned;
+
+
+-- create a table from retirement_titles who are eligible for mentorship
+
+SELECT e.emp_no, 
+	   e.first_name, 
+	   e.last_name,
+	   tl.title,
+	   tl.from_date,
+	   tl.to_date
+INTO mentorship_eligible
+FROM employees as e
+INNER JOIN titles as tl
+ON e.emp_no = tl.emp_no
+INNER JOIN salaries as s
+ON e.emp_no = s.emp_no
+WHERE e.birth_date BETWEEN '1965-01-01' AND '1965-12-31';
+
+--  check the table
+
+SELECT * 
+FROM mentorship_eligible;
+
+
+--  lose duplicates
+
+SELECT emp_no, 
+	   first_name, 
+	   last_name,
+	   title,
+	   from_date,
+	   to_date
+INTO mentorship_eligible_clean
+FROM
+ (SELECT emp_no, 
+	     first_name, 
+	     last_name,
+	     title,
+	     from_date,
+         to_date, ROW_NUMBER() OVER
+ (PARTITION BY (emp_no)
+ ORDER BY to_date DESC) rn
+ FROM mentorship_eligible
+ ) tmp WHERE rn = 1
+ORDER BY emp_no;
+
+--  check the table 
+
+SELECT * 
+FROM mentorship_eligible_clean
