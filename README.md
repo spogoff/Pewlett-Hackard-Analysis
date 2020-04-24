@@ -43,49 +43,51 @@ Using the dataframe above, the following steps were taken to create a summary an
 
 ### Total number of current employees: 
 
-Customer Service: 2597
-Research: 2413
-Sales: 5860
-Quality Management: 2234
-Development: 9281
-Production: 8174
-Human Resources: 1953
-Finance: 1908
-Marketing: 2199
-Total : 41380
+- Customer Service: 2597
+- Research: 2413
+- Sales: 5860
+- Quality Management: 2234
+- Development: 9281
+- Production: 8174
+- Human Resources: 1953
+- Finance: 1908
+- Marketing: 2199
+- Total : 41380
 
 ### Total number of employees eligible for retirement by department:
 
-Engineer: 4692
-Senior Engineer: 15600
-Manager: 2
-Assistant Engineer: 501
-Staff: 3837
-Senior Staff: 14735
-Technique Leader: 2013
-Total: 41380
+- Engineer: 4692
+- Senior Engineer: 15600
+- Manager: 2
+- Assistant Engineer: 501
+- Staff: 3837
+- Senior Staff: 14735
+- Technique Leader: 2013
+- Total: 41380
 
 ### Total number of employees eligible for retirement by gender:
 
-Male: 24738
-Female: 16642
+- Male: 24738
+- Female: 16642
 
 ### Total number of employees eligible for mentorship:
 
-Engineer: 286
-Senior Engineer: 610
-Manager: 0
-Assistant Engineer: 41
-Staff: 271
-Senior Staff: 633
-Technique Leader: 99
-Total: 1940
+- Engineer: 286
+- Senior Engineer: 610
+- Manager: 0
+- Assistant Engineer: 41
+- Staff: 271
+- Senior Staff: 633
+- Technique Leader: 99
+- Total: 1940
 
 ## Suggestions
 
 Pwelett Hackard is going to be affected pretty significantly with its upcoming wave of retirement. The two areas that are going to take the largest hit are Senior Staff and Senior Engineer deparments(14735 and 15600 respectively). Although the company has quite a few employees who are eligible for mentorship in those departments(633 and 610 respectively), there is still a lot of room for fresh hires. It is also recommended that the company invests in mentorship programs to have more mentors ready to train the next generation of senior staff and engineers. 
 
 Although there are only 2 managers retiring this year, since there are no employees eligible for training for those strategic positions, it is recommended that the company either invests in outsourcing training its current employees eligible for those roles.
+
+Lastly, the number of male employees retiring is much larger than the female employees. However, this might be a good opportunity for the company to create more opportunities for female employees to grow to more senior positions as there is currently an imbalance in the gender makeup of the company (179973 male to 120051 female employees). 
 
 
 
